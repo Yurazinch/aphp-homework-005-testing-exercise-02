@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+//namespace Yuraz\Exercise02\TableWrapperInterface;
+
 interface TableWrapperInterface
 {
     public function insert(array $values): void;

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+//namespace Yuraz\Exercise02\UserTableWrapper;
+
 class UserTableWrapper
 {
     private array $rows;
