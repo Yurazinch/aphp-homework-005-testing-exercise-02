@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-//namespace Yuraz\Exercise02\TableWrapperInterface;
+namespace Yuraz\Exercise02\TableWrapperInterface;
 
 interface TableWrapperInterface
 {

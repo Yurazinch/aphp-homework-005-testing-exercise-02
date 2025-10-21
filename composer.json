@@ -4,9 +4,9 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Yuraz\\Exercise02\\": "src/"
+            "Yuraz\\Exercise02\\": ["src/", "tests/"]
         }
-    },
+    },    
     "authors": [
         {
             "name": "Yuriy Zinchenko",
@@ -15,6 +15,6 @@
     ],
     "require": {},
     "require-dev": {
-            "phpunit/phpunit": "^12.3"
-        }
+        "phpunit/phpunit": "^12.3"
+    }
 }

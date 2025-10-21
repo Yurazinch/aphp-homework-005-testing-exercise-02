@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-//namespace Yuraz\Exercise02\UserTableWrapper;
+namespace Yuraz\Exercise02\UserTableWrapper;
 
 class UserTableWrapper
 {
-    private array $rows;
+    protected array $rows;
 
     /**
      * @param array|[column => row_value] $values
