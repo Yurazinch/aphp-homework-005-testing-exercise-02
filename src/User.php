@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Yuraz\Exercise02\User;
+//namespace Yuraz\Exercise02\User;
 
-use Src\UserTableWrapper;
-use Src\TableWrapperInterface;
+//use Yuraz\Exercise02\UserTableWrapper;
+//use Yuraz\Exercise02\TableWrapperInterface;
 
-//require_once ('UserTableWrapper.php');
-//require_once ('TableWrapperInterface.php');
+require_once ('UserTableWrapper.php');
+require_once ('TableWrapperInterface.php');
 
 class User extends UserTableWrapper implements TableWrapperInterface
 {
-    private array $rows;
+    protected array $rows;
 
     public function insert(array $values): void
     {        
