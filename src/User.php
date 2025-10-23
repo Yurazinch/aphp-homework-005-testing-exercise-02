@@ -16,9 +16,9 @@ class User extends UserTableWrapper implements TableWrapperInterface
 
     public function insert(array $values): void
     {        
-        if(!is_array($values) || empty($value))
+        if(!is_array($values) || !$values)
         {
-            alert('Нет строки для добавления');                            
+            throw new \Exception('Нет данных для добавления');                            
         }
        
         $this->rows = $values;
@@ -26,26 +26,26 @@ class User extends UserTableWrapper implements TableWrapperInterface
 
     public function update(int $id, array $values): array
     {
-        if(isset($id))
+        if(array_key_exists($id, $this->rows))
         {
             $this->rows[$id] = array_replace($this->rows[$id], $values);
             return $this->rows[$id];
         }
         else
         {
-            alert('Строки не существует');
+            throw new \Exception('Строки не существует');
         }
           
     }
 
     public function delete(int $id): void
     {
-        if(isset($id)) {
+        if(array_key_exists($id, $this->rows)) {
             $this->rows = array_splice($rows, $id, 1);
         }
         else
         {
-            alert('Строки не существует');
+            throw new \Exception('Строки не существует');
         }
     }
 
