@@ -2,13 +2,10 @@
 
 declare(strict_types=1);
 
-//namespace Yuraz\Exercise02\User;
+namespace Yuraz\Exercise02;
 
-//use Yuraz\Exercise02\UserTableWrapper;
-//use Yuraz\Exercise02\TableWrapperInterface;
-
-require_once ('UserTableWrapper.php');
-require_once ('TableWrapperInterface.php');
+use Yuraz\Exercise02\UserTableWrapper;
+use Yuraz\Exercise02\TableWrapperInterface;
 
 class User extends UserTableWrapper implements TableWrapperInterface
 {
@@ -16,7 +13,7 @@ class User extends UserTableWrapper implements TableWrapperInterface
 
     public function insert(array $values): void
     {        
-        if(!is_array($values) || !$values)
+        if(!is_array( $values ) || (!count( $values ) > 0))
         {
             throw new \Exception('Нет данных для добавления');                            
         }
@@ -41,7 +38,7 @@ class User extends UserTableWrapper implements TableWrapperInterface
     public function delete(int $id): void
     {
         if(array_key_exists($id, $this->rows)) {
-            $this->rows = array_splice($rows, $id, 1);
+            $this->rows = array_splice($this->rows, $id, 1);
         }
         else
         {

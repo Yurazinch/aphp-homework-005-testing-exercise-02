@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-//namespace Yuraz\Exercise02\UserTest;
-//use Yuraz\Exercise02\User;
+namespace Yuraz\Exercise02\UserTest;
+
+use Yuraz\Exercise02\User;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
-
-require_once ('src/User.php');
 
 class UserTest extends TestCase
 {
