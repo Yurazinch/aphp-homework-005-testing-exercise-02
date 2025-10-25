@@ -13,12 +13,12 @@ class User extends UserTableWrapper implements TableWrapperInterface
 
     public function insert(array $values): void
     {        
-        if(!is_array( $values ) || (!count( $values ) > 0))
+        if(empty($values))
         {
             throw new \Exception('Нет данных для добавления');                            
         }
        
-        $this->rows = $values;
+        $this->rows[] = $values;
     }
 
     public function update(int $id, array $values): array
@@ -38,7 +38,7 @@ class User extends UserTableWrapper implements TableWrapperInterface
     public function delete(int $id): void
     {
         if(array_key_exists($id, $this->rows)) {
-            $this->rows = array_splice($this->rows, $id, 1);
+            array_splice($this->rows, $id, 1);
         }
         else
         {
