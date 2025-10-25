@@ -14,15 +14,11 @@ $user->insert(['name' => 'Иван', 'surname' => 'Иванов']);
 $user->insert(['name' => 'Петр', 'surname' => 'Петров']);    
 $user->insert(['name' => 'Сидор', 'surname' => 'Сидоров']);
 
-$result = $user->get();
-
-print_r($result);
+print_r($user->get());
 
 $user->update(1, ['name' => 'Фёдор', 'surname' => 'Фёдоров']);
 
-$result = $user->get();
-
-print_r($result);
+print_r($user->get());
 
 $user->delete(1);
 
