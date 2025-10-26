@@ -24,7 +24,7 @@ class UserUpdateTest extends TestCase
         $this->user->insert(['name' => 'Петр', 'surname' => 'Петров']);
         $this->user->insert(['name' => 'Сидор', 'surname' => 'Сидоров']);   
         
-        //$this->expectExceptionMessage('Строки не существует');
+        $this->expectExceptionMessage('Строки не существует');
         $userResult = $this->user->update($id, $values);
         $result = "{$userResult['name']} {$userResult['surname']}";
         $this->assertEquals($expected, $result);
@@ -32,8 +32,8 @@ class UserUpdateTest extends TestCase
     public static function providerUpdate()
     {
         return [
-            //'test1' => [10, ['name' => 'Упдат', 'surname' => 'Упдатов'], 'Строки не существует'],
-            'test2' => [1, ['name' => 'Упдат', 'surname' => 'Упдатов'], 'Упдат Упдатов'],
+            'test1' => [1, ['name' => 'Упдат', 'surname' => 'Упдатов'], 'Упдат Упдатов'],
+            'test2' => [10, ['name' => 'Упдат', 'surname' => 'Упдатов'], 'Строки не существует'],
         ];
     }
 }

@@ -21,7 +21,7 @@ class UserInsertTest extends TestCase
     #[DataProvider('providerInsert')]
     public function testInsert(array $values, int|string $expected)
     {
-        //$this->expectExceptionMessage('Нет данных для добавления');
+        $this->expectExceptionMessage('Нет данных для добавления');
         $this->user->insert($values);
         $result = $this->user->get();
         $this->assertEquals($expected, $result[0]['surname']);
@@ -33,7 +33,7 @@ class UserInsertTest extends TestCase
             'test1' => [['name' => 'Иван', 'surname' => 'Иванов'], 'Иванов'],
             'test2' => [['name' => 'Петр', 'surname' => 'Петров'], 'Петров'],
             'test3' => [['name' => 'Сидор', 'surname' => 'Сидоров'], 'Сидоров'],
-            //'test4' => [[], 'Нет данных для добавления'],        
+            'test4' => [[], 'Нет данных для добавления'],        
         ];
     } 
     

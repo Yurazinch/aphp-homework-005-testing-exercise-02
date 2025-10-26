@@ -24,7 +24,7 @@ class UserDeleteTest extends TestCase
         $this->user->insert(['name' => 'Петр', 'surname' => 'Петров']);
         $this->user->insert(['name' => 'Сидор', 'surname' => 'Сидоров']);   
         
-        //$this->expectExceptionMessage('Строки не существует');
+        $this->expectExceptionMessage('Строки не существует');
         $this->user->delete($id);
         $result = $this->user->get();
         $toString = "{$result[0]['name']} {$result[1]['surname']}";
@@ -33,7 +33,7 @@ class UserDeleteTest extends TestCase
     public static function providerDelete()
     {
         return [
-            //'test1' => [9, 'Строки не существует'],
+            'test1' => [9, 'Строки не существует'],
             'test2' => [1, 'Иван Сидоров'],
         ];
     }
